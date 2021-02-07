@@ -1,9 +1,6 @@
 package main
 
 import (
-	"fmt"
-	"os"
-
 	"github.com/rs/zerolog/log"
 )
 
@@ -13,13 +10,6 @@ var (
 
 func main() {
 	setupLogger()
-
-	conf := mustGetConfig(configFilename)
-	fmt.Println(conf)
-	os.Exit(1)
-
-	c := mustGetConfig(configFilename)
-	fmt.Println(c)
 
 	// build root command
 	rootCmd := getRootCmd()
