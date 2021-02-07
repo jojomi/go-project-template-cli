@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Binaries for programs and plugins
 *.exe
 *.exe~
@@ -14,7 +13,7 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
-=======
+
+# remove these to make go modules work
 go.sum
 go.mod
->>>>>>> 4577c49... Initial code
