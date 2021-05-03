@@ -11,8 +11,8 @@
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
 
-# Dependency directories (remove the comment below to include it)
-# vendor/
+# Dependency directories (remove/comment below to include dependencies in this repository)
+vendor/
 
 # remove these to make go modules work
 go.sum
