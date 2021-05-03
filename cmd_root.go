@@ -10,6 +10,7 @@ import (
 func getRootCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use: strcase.ToKebab(ToolName),
+		Run: handleRootCmd,
 	}
 	return cmd
 }
