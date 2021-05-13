@@ -31,6 +31,8 @@ func handleRootCmd(cmd *cobra.Command, args []string) {
 }
 
 func handleRoot(env EnvRoot) {
+	setLoggerVerbosity(env.Verbose)
+
 	// TODO implement logic here
 
 	// read config
