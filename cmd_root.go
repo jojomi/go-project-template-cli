@@ -1,8 +1,6 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/iancoleman/strcase"
 	"github.com/spf13/cobra"
 )
@@ -12,6 +10,17 @@ func getRootCmd() *cobra.Command {
 		Use: strcase.ToKebab(ToolName),
 		Run: handleRootCmd,
 	}
+
+	pf := cmd.PersistentFlags()
+	pf.BoolP("verbose", "v", false, "activate verbose output")
+
+	// configure command local flags
+	// f := cmd.Flags()
+	// f.BoolP("dry-run", "d", false, "Prevent destructive operations")
+
+	// add subcommands
+	// cmd.AddCommand(getOtherCmd())
+
 	return cmd
 }
 
@@ -22,9 +31,9 @@ func handleRootCmd(cmd *cobra.Command, args []string) {
 }
 
 func handleRoot(env EnvRoot) {
-	// implement logic here
+	// TODO implement logic here
 
-	// access config like this
-	conf := mustGetConfig(configFilename)
-	fmt.Println(conf)
+	// read config
+	// conf := mustGetConfig(configFilename)
+	// fmt.Println(conf)
 }
