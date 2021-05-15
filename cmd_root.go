@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/iancoleman/strcase"
+	"github.com/rs/zerolog/log"
 	"github.com/spf13/cobra"
 )
 
@@ -26,7 +27,10 @@ func getRootCmd() *cobra.Command {
 
 func handleRootCmd(cmd *cobra.Command, args []string) {
 	env := EnvRoot{}
-	env.ParseFrom(cmd, args)
+	err := env.ParseFrom(cmd, args)
+	if err != nil {
+		log.Fatal().Err(err).Msg("could not parse command")
+	}
 	handleRoot(env)
 }
 

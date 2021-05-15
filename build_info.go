@@ -2,7 +2,7 @@ package main
 
 // see build.sh
 var (
-	ToolName = "go-project-template"
+	ToolName = "go-project-template-cli"
 
 	GitCommit  string
 	GitBranch  string

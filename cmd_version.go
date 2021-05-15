@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/rs/zerolog/log"
 	"github.com/spf13/cobra"
 )
@@ -14,12 +16,21 @@ func getVersionCmd() *cobra.Command {
 }
 
 func handleVersionCmd(cmd *cobra.Command, args []string) {
-	log.Info().
+	version := GitVersion
+	fmt.Println(ToolName + ", version " + version)
+
+	v, err := cmd.Flags().GetBool("verbose")
+	if err != nil {
+		log.Fatal().Err(err).Msg("flag parsing failed")
+	}
+	setLoggerVerbosity(v)
+
+	log.Debug().
 		Str("git version", GitVersion).
 		Str("git commit", GitCommit).
 		Str("git date", GitDate).
 		Str("git state", GitState).
 		Str("git branch", GitBranch).
 		Str("git remote", GitRemote).
-		Msg(ToolName + ", version " + GitVersion)
+		Msg("")
 }

@@ -14,6 +14,9 @@
 # Dependency directories (remove/comment below to include dependencies in this repository)
 vendor/
 
-# remove these to make go modules work
+bin/
+tmp/
+
+# remove
 go.sum
-go.mod
+# /remove
