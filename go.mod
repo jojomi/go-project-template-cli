@@ -1,4 +1,4 @@
-module dlakjsd.com/askjdlaksd
+module github.com/jojomi/go-project-template-cli
 
 go 1.16
 
