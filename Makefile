@@ -15,14 +15,12 @@ GIT_REMOTE=$$(git config --get remote.origin.url)
 
 .PHONY : build
 build:
-	echo "Building $(current_dir)..."
-	# trying to be reproducible
+	go generate
 	CGO_ENABLED=0 go build -asmflags -trimpath -ldflags "-buildid= -X 'main.GitCommit=$(GIT_COMMIT)' -X 'main.GitBranch=$(GIT_BRANCH)' -X 'main.GitDate=$(GIT_DATE)' -X 'main.GitVersion=$(GIT_VERSION)' -X 'main.GitState=$(GIT_STATE)'  -X 'main.GitRemote=$(GIT_REMOTE)'" -o "$(full_binary_path)"
 
 .PHONY : install
 install:
-	echo "Building $(current_dir)..."
-	# trying to be reproducible
+	go generate
 	CGO_ENABLED=0 go install -asmflags -trimpath -ldflags "-buildid= -X 'main.GitCommit=$(GIT_COMMIT)' -X 'main.GitBranch=$(GIT_BRANCH)' -X 'main.GitDate=$(GIT_DATE)' -X 'main.GitVersion=$(GIT_VERSION)' -X 'main.GitState=$(GIT_STATE)'  -X 'main.GitRemote=$(GIT_REMOTE)'" -o "$(full_binary_path)"
 
 .PHONY : minify
