@@ -1,6 +1,6 @@
 module github.com/jojomi/go-project-template-cli
 
-go 1.16
+go 1.17
 
 require (
 	github.com/iancoleman/strcase v0.1.3
