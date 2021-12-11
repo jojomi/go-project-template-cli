@@ -45,6 +45,13 @@ if [ "$url" != "skip" ]; then
     set -e
 fi
 
+# update module dependencies
+go mod tidy
+
+# test build
+make build
+make clean
+
 printf "\n"
 printf "\n"
 echo "$(tput bold)> If everything looks good, this script can be removed now.$(tput sgr0)"
