@@ -21,7 +21,7 @@ build:
 .PHONY : install
 install:
 	go generate
-	CGO_ENABLED=0 go install -asmflags -trimpath -ldflags "-buildid= -X 'main.GitCommit=$(GIT_COMMIT)' -X 'main.GitBranch=$(GIT_BRANCH)' -X 'main.GitDate=$(GIT_DATE)' -X 'main.GitVersion=$(GIT_VERSION)' -X 'main.GitState=$(GIT_STATE)'  -X 'main.GitRemote=$(GIT_REMOTE)'" -o "$(full_binary_path)"
+	CGO_ENABLED=0 go install -asmflags -trimpath -ldflags "-buildid= -X 'main.GitCommit=$(GIT_COMMIT)' -X 'main.GitBranch=$(GIT_BRANCH)' -X 'main.GitDate=$(GIT_DATE)' -X 'main.GitVersion=$(GIT_VERSION)' -X 'main.GitState=$(GIT_STATE)'  -X 'main.GitRemote=$(GIT_REMOTE)'"
 
 .PHONY : minify
 minify:
